@@ -1,0 +1,40 @@
+$ solc ./tests/P1A.sol --ir --overwrite -o ./tests/
+
+Compiler run successful. Artifact(s) can be found in directory ./tests/.
+
+$ solc ./tests/P1B.sol --ir --overwrite -o ./tests/
+
+Compiler run successful. Artifact(s) can be found in directory ./tests/.
+
+$ python3 ./yul_parser.py --yul ./tests/P1A.yul
+
+$ python3 ./yul_parser.py --yul ./tests/P1B.yul
+
+$ racket ./yul-bmc.rkt --config ./configs/P1-config.json --verbose
+
+# building simulator for source from ./tests/P1A.json
+# initializing simulator ...
+# building simulator for target from ./tests/P1B.json
+# initializing simulator ...
+
+# running task: 0
+# constructing transaction ...
+  transaction is: ((txn_function_call constructor) (txn_function_call observe))
+# resetting Rosette ...
+# resetting simulators ...
+# running transactions ...
+  # in simulator target
+  # in simulator source
+# checking equivalence ...
+# result (task 0):, #f
+
+# running task: 1
+# constructing transaction ...
+  transaction is: ((txn_function_call constructor) (txn_function_call modifyX arg-bv$0) (txn_function_call observe))
+# resetting Rosette ...
+# resetting simulators ...
+# running transactions ...
+  # in simulator target
+  # in simulator source
+# checking equivalence ...
+# result (task 1):, #t
