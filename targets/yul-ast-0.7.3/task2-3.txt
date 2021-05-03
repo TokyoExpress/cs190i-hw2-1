@@ -1,0 +1,1 @@
+It's not possible because both contracts' modifyX functions have the same semantics and the original observe functions will never detect any difference in xValue between the two.

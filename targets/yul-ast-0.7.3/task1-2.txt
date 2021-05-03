@@ -1,0 +1,3 @@
+The two modifyX functions have the same semantics; they are written exactly the same and both accept an unsigned integer to change xValue to. 
+
+(The only scenario I could think of in which they could possibly return different outputs is if immediately after constructing, they were both passed xValue as the parameter, in which one would remain 6 and the other 7. Not sure if that example counts as unequal semantics, however, as the functions themselves are identical.)

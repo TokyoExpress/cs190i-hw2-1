@@ -13,7 +13,7 @@ contract P2A {
 	function modifyY(uint newY) public {
 		yValue = newY;
 	}
-	function observe() public view returns (uint obsX) {
-		obsX = xValue;
+	function observe() public view returns (uint obsY) {
+		obsY = yValue;
 	}
 }

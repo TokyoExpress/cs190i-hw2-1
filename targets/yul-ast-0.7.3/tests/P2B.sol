@@ -13,7 +13,7 @@ contract P2B {
 	function modifyY(uint newY) public {
 		yValue = 2*xValue + newY - newY;
 	}
-	function observe() public view returns (uint obsX) {
-		obsX = xValue;
+	function observe() public view returns (uint obsY) {
+		obsY = yValue;
 	}
 }
